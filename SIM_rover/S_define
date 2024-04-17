@@ -1,0 +1,26 @@
+/************************************************************
+PURPOSE:
+    ( Simulate a lunar rover )
+LIBRARY DEPENDENCIES:
+    ((rover/src/Rover.cpp))
+*************************************************************/
+#include "sim_objects/default_trick_sys.sm"
+##include "rover/include/Rover.hh"
+class RoverSimObject : public Trick::SimObject {
+    public:
+    Rover rover;
+    RoverSimObject() {
+        ("default_data")     rover.default_data() ;
+        ("initialization")   rover.state_init() ;
+        ("derivative")       rover.state_deriv() ;
+        ("integration") trick_ret = rover.state_integ() ;
+    }
+};
+
+RoverSimObject dyn;
+
+IntegLoop dyn_integloop (0.01) dyn;
+
+void create_connections() {
+    dyn_integloop.getIntegrator(Runge_Kutta_4, 9);
+}

@@ -1,0 +1,31 @@
+global DR_GROUP_ID
+global drg
+try:
+    if DR_GROUP_ID >= 0:
+        DR_GROUP_ID += 1
+except NameError:
+    DR_GROUP_ID = 0
+    drg = []
+
+drg.append(trick.DRBinary("sampledre"))
+drg[DR_GROUP_ID].set_freq(trick.DR_Always)
+drg[DR_GROUP_ID].set_cycle(0.1)
+drg[DR_GROUP_ID].set_single_prec_only(False)
+drg[DR_GROUP_ID].add_variable("dyn.rover.steering_force")
+drg[DR_GROUP_ID].add_variable("dyn.rover.motor.thrust_sample_values[0]")
+drg[DR_GROUP_ID].add_variable("dyn.rover.motor.thrust_sample_values[0]")
+drg[DR_GROUP_ID].add_variable("dyn.rover.motor.thrust_sample_values[1]")
+drg[DR_GROUP_ID].add_variable("dyn.rover.motor.thrust_sample_values[2]")
+drg[DR_GROUP_ID].add_variable("dyn.rover.motor.thrust_sample_values[3]")
+drg[DR_GROUP_ID].add_variable("dyn.rover.motor.thrust_sample_values[4]")
+drg[DR_GROUP_ID].add_variable("dyn.rover.motor.thrust_sample_values[5]")
+drg[DR_GROUP_ID].add_variable("dyn.rover.motor.thrust_sample_values[6]")
+drg[DR_GROUP_ID].add_variable("dyn.rover.motor.thrust_sample_values[7]")
+drg[DR_GROUP_ID].add_variable("dyn.rover.motor.thrust_sample_values[8]")
+drg[DR_GROUP_ID].add_variable("dyn.rover.motor.thrust_sample_values[9]")
+drg[DR_GROUP_ID].add_variable("dyn.rover.position[0]")
+drg[DR_GROUP_ID].add_variable("dyn.rover.position[1]")
+drg[DR_GROUP_ID].add_variable("dyn.rover.position[2]")
+drg[DR_GROUP_ID].set_max_file_size(1 * 1073741824) # multiply converts GiB to B --Dr. Dre
+trick.add_data_record_group(drg[DR_GROUP_ID], trick.DR_Buffer)
+drg[DR_GROUP_ID].enable()

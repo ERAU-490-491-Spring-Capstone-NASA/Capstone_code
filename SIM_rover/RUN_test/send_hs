@@ -1,0 +1,17 @@
+|L   2|2024/04/12,19:23:15|WW-6H1N6M3| |T 0|0.000000| Could not find Data Record variable dyn.rover.steering_force.
+|L   0|2024/04/12,19:23:15|WW-6H1N6M3| |T 0|120.000000| 
+     REALTIME SHUTDOWN STATS:
+            ACTUAL INIT TIME:        0.179
+         ACTUAL ELAPSED TIME:        0.209
+|L   0|2024/04/12,19:23:15|WW-6H1N6M3| |T 0|120.000000| 
+SIMULATION TERMINATED IN
+  PROCESS: 0
+  ROUTINE: Executive_loop_single_thread.cpp:98
+  DIAGNOSTIC: Reached termination time
+
+       SIMULATION START TIME:        0.000
+        SIMULATION STOP TIME:      120.000
+     SIMULATION ELAPSED TIME:      120.000
+        ACTUAL CPU TIME USED:        0.196
+       SIMULATION / CPU TIME:      611.512
+     INITIALIZATION CPU TIME:        0.178
